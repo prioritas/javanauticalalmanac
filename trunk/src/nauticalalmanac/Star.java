@@ -2,7 +2,7 @@ package nauticalalmanac;
 
 public class Star
 {
-  public final static Star[] CATALOG = new Star[]
+  private final static Star[] CATALOG = new Star[]
   { 
     //       Name              Constellation pos            RA             Dec             deltaRA     deltaD  par
     new Star("Acamar",         "theta Eridani",              2.9710266670, -40.3047138890, -0.3910,    1.9400, 0.0280), 
@@ -65,6 +65,11 @@ public class Star
     new Star("Zubenelgenubi",  "alpha Librae",              14.8479758330, -16.0417833330,  -0.7340,   -6.6800, 0.0490)
   };
 
+  public static Star[] getCatalog()
+  {
+    return CATALOG.clone();  
+  }
+  
   private String starName = "", constellationPlace = "";
   private double ra, dec, deltaRa, deltaDec, par;  
   
